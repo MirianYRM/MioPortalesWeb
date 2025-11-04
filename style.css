@@ -1,0 +1,520 @@
+/* Cool infinite background scrolling animation.
+ * Twitter: @kootoopas
+ */
+/* Exo thin font from Google. */
+@import url(https://fonts.googleapis.com/css?family=Exo:100);
+/* Background data (Original source: https://subtlepatterns.com/grid-me/) */
+/* Animations */
+@-webkit-keyframes bg-scrolling-reverse {
+  100% {
+    background-position: 50px 50px;
+  }
+}
+@-moz-keyframes bg-scrolling-reverse {
+  100% {
+    background-position: 50px 50px;
+  }
+}
+@-o-keyframes bg-scrolling-reverse {
+  100% {
+    background-position: 50px 50px;
+  }
+}
+@keyframes bg-scrolling-reverse {
+  100% {
+    background-position: 50px 50px;
+  }
+}
+@-webkit-keyframes bg-scrolling {
+  0% {
+    background-position: 50px 50px;
+  }
+}
+@-moz-keyframes bg-scrolling {
+  0% {
+    background-position: 50px 50px;
+  }
+}
+@-o-keyframes bg-scrolling {
+  0% {
+    background-position: 50px 50px;
+  }
+}
+@keyframes bg-scrolling {
+  0% {
+    background-position: 50px 50px;
+  }
+}
+/* Main styles */
+
+body .contenedorTitulo{
+  /* margin-top: 13.5rem; */
+  color: #999;
+  font: 400 16px/1.5 exo, ubuntu, "segoe ui", helvetica, arial, sans-serif;
+  text-align: center;
+  /* img size is 50x50 */
+  background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAIAAACRXR/mAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAIGNIUk0AAHolAACAgwAA+f8AAIDpAAB1MAAA6mAAADqYAAAXb5JfxUYAAABnSURBVHja7M5RDYAwDEXRDgmvEocnlrQS2SwUFST9uEfBGWs9c97nbGtDcquqiKhOImLs/UpuzVzWEi1atGjRokWLFi1atGjRokWLFi1atGjRokWLFi1af7Ukz8xWp8z8AAAA//8DAJ4LoEAAlL1nAAAAAElFTkSuQmCC") repeat 0 0;
+  -webkit-animation: bg-scrolling-reverse .92s infinite;
+  /* Safari 4+ */
+  -moz-animation: bg-scrolling-reverse .92s infinite;
+  /* Fx 5+ */
+  -o-animation: bg-scrolling-reverse .92s infinite;
+  /* Opera 12+ */
+  animation: bg-scrolling-reverse .92s infinite;
+  /* IE 10+ */
+  -webkit-animation-timing-function: linear;
+  -moz-animation-timing-function: linear;
+  -o-animation-timing-function: linear;
+  animation-timing-function: linear;
+}
+
+body .contenedorTitulo h1{
+  font-size: 52px;
+  font-weight: 800;
+}
+
+body .contenedorTitulo::before {
+  /* content: "INFINITY"; */
+  /* font-size: 20rem; */
+  font-weight: 400;
+  font-style: normal;
+}
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body{
+  background-color: var(--colorBody); 
+  font-family: var(--font-principal); 
+}
+
+.encabezado{
+
+  .contenedorNav{
+      background-color:var(--si);
+      padding: 22px;
+      margin-bottom: 10px;
+      display: flex;
+      justify-content: space-between;
+      
+      position: fixed;
+      width: 100%;
+      box-shadow: 0 4px 2px rgba(0, 0, 0, 0.2);
+      border-bottom: 2px solid var(--body); 
+      top: 0;
+
+      .logo{
+      font-size: 24px;
+      font-weight: 600;
+      color: var(--no); 
+      margin-left: 105px;
+          &:hover{
+              color: var(--with); 
+          }
+      }
+
+      .navegacion{
+          display: flex;
+          justify-content: space-around;
+          gap: 18px;
+          margin-right: 105px;
+
+          a{
+              text-decoration: none;
+              color: var(--no); 
+              font-weight: bold;
+
+              &:hover{
+                  color: var(--with); 
+              }
+          }
+      }
+  }
+
+  .contenedorTitulo{
+      height: 400px;     
+      display: flex;
+      justify-content: center;
+      align-items: center;
+  }
+  
+}
+
+.contenedorProductos{
+  background-color: var(--colorContenedor); 
+  padding-top: 20px;
+  height: 780px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction:column ;
+
+  .tituloProductos{
+      text-align: center;
+      margin: 30px 0 30px 0;
+      font-size: 38px;
+      color: var(--letras);
+  }
+
+  .contenedorTarjetas{
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      justify-content: center;
+      
+      .tarjeta{
+          background-color: var(--contenedorProducto);
+          width: 320px;
+          border: 1px solid var(--letras);
+          border-radius: 10px;
+          box-shadow: 5px 4px 5px rgba(0, 0, 0, 0.3);
+          display: flex;
+          flex-direction: column;
+
+          img {
+              height: 220px; 
+              object-fit: cover; 
+              width: 100%;
+              border-radius: 10px 10px 0 0;
+          }
+
+          p{
+              line-height: 1.5;
+              text-align: justify;
+              margin: 10px 0;
+              padding: 12px;
+              font-family: var(--font-principal); 
+              color: var(--letras);
+          }
+
+          .btn{
+              background-color: var(--btn-comprar); 
+              padding: 8px;
+              border-radius: 5px;
+              text-decoration: none;
+              color: var(--no); 
+              margin: 10px 10px;
+              align-self: flex-start;
+          }
+      }
+
+  }
+}   
+
+.contenedorServicios{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;    
+  height: 550px;
+  justify-content: center;
+  background-color: var(--colorContenedor); 
+
+  .tituloServicios{
+      margin-top: 20px;
+      color: var(--letras);
+  }
+
+  .contenedorTarjetasServicios{
+      display: flex;
+      flex-direction: column;
+      align-items: center; 
+      gap: 10px;
+      .tarjetaServicio{
+              border: 1px solid var(--letras);
+              padding: 10px;
+              width: 90%;
+              border-radius: 6px; 
+              margin-bottom: 10px;
+              background-color: var(--contenedorProducto);
+      }
+  }
+}
+
+.contenedorProducto{
+  width: 800px;
+  border: 1px solid var(--letras);     
+  border-radius: 8px;     
+  padding: 20px;
+  line-height: 1.8;
+  text-align: justify;
+  margin: 100px auto;
+  background-color: var(--contenedorProducto);
+  .producto{
+      h2{
+          font-size: 32px;
+          font-weight: 600;
+          color: var(--letras);
+      }
+      img{
+          width: 100%;
+      }
+  }
+}
+
+.footer{
+  background-color: var(--si);
+  padding: 20px;
+  color: var(--no); 
+  text-align: center;
+}
+
+.contenedorAcercaDe{
+  background-color: var(--colorContenedor); 
+  padding: 12px;
+  margin-top: 20px;
+  height: 420px;
+  text-align: justify;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  display: flex;
+
+  .tituloAcercaDe{         
+      margin-top: 10px;
+      margin-bottom: 20px;
+      color: var(--letras);
+  }
+
+  .subContendorAcercaDe{
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: 1fr 1fr;
+      gap: 20px;
+      width: 90%;
+  }
+
+  h2{
+      text-align: center;
+      margin-bottom: 10px;
+      color: var(--letras);
+  }
+
+  .mision,.vision,.valores{
+      border: 1px solid var(--letras);
+      padding: 10px;
+      border-radius: 5px;    
+      background-color: var(--contenedorProducto);     
+  }
+
+  .valores{
+      grid-column: 1 / -1;
+      margin-bottom: 10px;
+  }
+}
+
+/* Sección de contacto */
+.contenedorContacto{
+  display: flex;
+  flex-direction: column;
+  padding: 40px;
+  width: 60%;
+  margin: 20px auto;
+
+  .tituloContacto{
+      text-align: center;
+      margin-bottom: 30px;
+      font-size: 22px;
+      font-family: var(--font-principal); 
+
+      hr{
+          border: 2x solid var(--letras);
+          margin-top: 10px;
+      }
+  }
+
+  .contenedorformulario{
+         background-color: #E0E0D6; 
+         bottom: 1px solid var(--letras);
+         border-radius: 4px;
+         padding: 20px;
+
+         .Formulario{
+           display: flex;
+           flex-direction: column;
+           gap: 10px;
+
+           input, textarea{
+               padding: 8px;
+               border-radius: 4px;
+               border: none;
+               background-color:var(--colorBody); 
+           }
+           textarea{
+               resize: none; 
+           }
+
+           .contenedorBotones{
+               text-align: center;
+
+               .btn{
+                   padding: 8px;
+                   color: var(--no);
+                   border: none;
+                   width: 80px;
+                   border-radius: 4px;
+                   font-size: 14px;
+                   cursor: pointer;
+               }
+
+               .btnEnviar{
+                   background-color: var(--si); 
+                   &:hover{
+                       background-color: #55711E; 
+                   }
+               }
+               .btnCancelar{
+                   background-color: var(--body); 
+                   &:hover{
+                       background-color: #1F2E3C; 
+                   }
+               }  
+           }  
+         } 
+  }
+}
+
+.contenedorHorario{
+  background-color:var(--colorContenedor);
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  padding:40px ;
+  font-size: 20px;
+  color: var(--letras);
+}
+
+/* === MEDIA QUERIES RESPONSIVE === */
+
+/* Para tablets y pantallas medianas */
+@media (max-width: 768px) {
+  .contenedorNav {
+      flex-direction: column;
+      align-items: center;
+      gap: 10px;
+      margin-right: 0;
+  }
+
+  .navegacion {
+      flex-direction: column;
+      gap: 10px;
+      margin: 0;
+  }
+
+  .logo {
+      margin-left: 0;
+  }
+
+  .contenedorTitulo {
+      height: auto;
+      padding: 20px;
+  }
+
+  .contenedorProductos {
+      height: auto;
+      padding: 20px;
+  }
+
+  .contenedorTarjetas {
+      flex-direction: column;
+      gap: 15px;
+      align-items: center;
+  }
+
+  .tarjeta {
+      width: 90%;
+  }
+
+  .contenedorServicios {
+      height: auto;
+      gap: 15px;
+  }
+
+  .contenedorTarjetasServicios {
+      width: 100%;
+  }
+
+  .tarjetaServicio {
+      width: 90%;
+  }
+
+  .subContendorAcercaDe {
+      grid-template-columns: 1fr;
+      grid-template-rows: auto;
+      gap: 15px;
+  }
+
+  .contenedorContacto {
+      width: 90%;
+      padding: 20px;
+  }
+
+  .contenedorformulario {
+      padding: 15px;
+  }
+
+  .footer {
+      padding: 15px;
+  }
+}
+
+/* Para celulares pequeños */
+@media (max-width: 450px) {
+  .contenedorNav {
+      padding: 10px;
+  }
+
+  .navegacion {
+      font-size: 14px;
+      gap: 5px;
+  }
+
+  .logo {
+      font-size: 18px;
+  }
+
+  .contenedorTitulo {
+      padding: 10px;
+      text-align: center;
+  }
+
+  .tarjeta {
+      width: 100%;
+      margin: 5px 0;
+  }
+
+  .tarjetaServicio {
+      width: 100%;
+      margin: 5px 0;
+  }
+
+  .subContendorAcercaDe {
+      gap: 10px;
+  }
+
+  .mision, .vision, .valores {
+      width: 100%;
+  }
+
+  .contenedorContacto {
+      width: 100%;
+      padding: 10px;
+  }
+
+  .contenedorformulario {
+      padding: 10px;
+  }
+
+  input, textarea {
+      width: 100%;
+  }
+
+  .footer {
+      font-size: 14px;
+      padding: 10px;
+  }
+}
+
