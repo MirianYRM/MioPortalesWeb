@@ -1,0 +1,359 @@
+:root{
+   
+    --colorBody: #F5F5DC;        
+    --colorContenedor: #E0E0D6;     
+    --contenedorProducto: #FFFFFF;  
+    --letras: #3A3F30;              
+    --with: #B59410;               
+    --body: #2C3E50;                
+    --si: #6B8E23;                  
+    --no: #FFFFFF;                 
+    --btn-comprar: #B59410;        
+    --btn-hover: #D4AF37;          
+    
+    
+    --font-principal: 'Raleway', sans-serif;
+}
+
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: var(--colorBody); 
+    font-family: var(--font-principal); 
+}
+
+.encabezado{
+
+    .contenedorNav{
+        background-color:var(--si);
+        padding: 22px;
+        margin-bottom: 10px;
+        display: flex;
+        justify-content: space-between;
+        
+        position: fixed;
+        width: 100%;
+        box-shadow: 0 4px 2px rgba(0, 0, 0, 0.2);
+        border-bottom: 2px solid var(--body); 
+        top: 0;
+
+        .logo{
+        font-size: 24px;
+        font-weight: 600;
+        color: var(--no); 
+        margin-left: 105px;
+            &:hover{
+                color: var(--with); 
+            }
+        }
+
+        .navegacion{
+            display: flex;
+            justify-content: space-around;
+            gap: 18px;
+            margin-right: 105px;
+
+            a{
+                text-decoration: none;
+                color: var(--no); 
+                font-weight: bold;
+
+                &:hover{
+                    color: var(--with); 
+                }
+            }
+        }
+    }
+
+    .contenedorTitulo{
+        height: 400px;     
+        /* margin-bottom: 100px; */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        
+    }
+    
+}
+
+.contenedorProductos{
+    background-color: var(--colorContenedor); 
+    padding-top: 20px;
+    padding-top: 20px ;
+    height: 780px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction:column ;
+
+
+    .tituloProductos{
+        text-align: center;
+        margin: 30px 0 30px 0;
+        font-size: 38px;
+        color: var(--letras);
+    }
+
+    .contenedorTarjetas{
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        justify-content: center;
+        
+        .tarjeta{
+            background-color: var(--contenedorProducto);
+            /* margin: 100px auto; */
+            width: 320px;
+            border: 1px solid var(--letras);
+            border-radius: 10px;
+            box-shadow: 5px 4px 5px rgba(0, 0, 0, 0.3);
+            display: flex;
+            flex-direction: column;
+
+            img {
+                
+                height: 220px; 
+                object-fit: cover; 
+                width: 100%;
+                border-radius: 10px 10px 0 0;
+            }
+
+            p{
+                line-height: 1.5;
+                text-align: justify;
+                margin: 10px 0;
+                padding: 12px;
+                font-family: var(--font-principal); 
+                color: var(--letras);
+            }
+
+            .btn{
+                background-color: var(--btn-comprar); 
+                padding: 8px;
+                border-radius: 5px;
+                text-decoration: none;
+                color: var(--no); /* Texto Blanco */
+                /* display: inline-block;     */
+                margin: 10px 10px;
+                align-self: flex-start;
+            }
+        }
+
+    }
+}   
+
+.contenedorServicios{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;    
+    height: 550px;
+    justify-content: center;
+    background-color: var(--colorContenedor); 
+    
+    
+
+
+    .tituloServicios{
+        margin-top: 20px;
+        color: var(--letras);
+    }
+
+    .contenedorTarjetasServicios{
+        display: flex;
+        flex-direction: column;
+        align-items: center; 
+
+        gap: 10px;
+        .tarjetaServicio{
+                border: 1px solid var(--letras);
+                padding: 10px;
+                width: 90%;
+                border-radius: 6px; 
+                margin-bottom: 10px;
+                background-color: var(--contenedorProducto);
+        }
+
+    }
+}
+
+.contenedorProducto{
+    width: 800px;
+    border: 1px solid var(--letras);     
+    border-radius: 8px;     
+    padding: 20px;
+    line-height: 1.8;
+    text-align: justify;
+    margin: 100px auto;
+    background-color: var(--contenedorProducto);
+    .producto{
+
+        h2{
+            font-size: 32px;
+            font-weight: 600;
+            color: var(--letras);
+        }
+        img{
+            width: 100%;
+        }
+    }
+
+}
+
+.footer{
+    background-color: var(--si);
+    padding: 20px;
+    
+    color: var(--no); 
+    text-align: center;
+}
+
+.contenedorAcercaDe{
+    background-color: var(--colorContenedor); 
+    padding: 12px;
+    margin-top: 20px;
+    height: 420px;
+    text-align: justify;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    display: flex;
+    
+    
+
+
+    .tituloAcercaDe{         
+        margin-top: 10px;
+        margin-bottom: 20px;
+        color: var(--letras);
+    }
+
+    .subContendorAcercaDe{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr 1fr;
+        gap: 20px;
+        width: 90%;
+        
+    }
+
+    h2{
+        text-align: center;
+        margin-bottom: 10px;
+        color: var(--letras);
+    }
+
+    .mision,.vision,.valores{
+        border: 1px solid var(--letras);
+        padding: 10px;
+        border-radius: 5px;    
+        background-color: var(--contenedorProducto);     
+    }
+
+    .valores{
+        grid-column: 1 / -1;
+        margin-bottom: 10px;
+    }
+
+}
+
+/*seccion de contacto*/
+.contenedorContacto{
+    /* background-color: #898585; */
+    display: flex;
+    flex-direction: column;
+    padding: 40px;
+    width: 60%;
+    margin: 20px auto;
+    
+
+    .tituloContacto{
+        text-align: center;
+        margin-bottom: 30px;
+        font-size: 22px;
+        font-family: var(--font-principal); 
+
+        hr{
+            border: 2x solid var(--letras);
+            margin-top: 10px;
+        }
+    }
+
+    
+
+    .contenedorformulario{
+           background-color: #E0E0D6; 
+           bottom: 1px solid var(--letras);
+           border-radius: 4px;
+           padding: 20px;
+           
+           
+
+           .Formulario{
+             display: flex;
+             flex-direction: column;
+             gap: 10px;
+
+             input, textarea{
+                 padding: 8px;
+                 border-radius: 4px;
+                 border: none;
+                 background-color:var(--colorBody); 
+             }
+             textarea{
+                 resize: none; /*para que no se pueda hacer mas grgande*/
+             }
+
+             .contenedorBotones{
+                 text-align: center;
+
+                 .btn{
+                     padding: 8px;
+                     color: var(--no);
+                     border: none;
+                     width: 80px;
+                     border-radius: 4px;
+                     font-size: 14px;
+                     cursor: pointer;
+
+                 }
+
+                 .btnEnviar{
+                     background-color: var(--si); 
+                     &:hover{
+                         background-color: #55711E; 
+
+                     }
+                     
+                 }
+                 .btnCancelar{
+                     background-color: var(--body); 
+                     &:hover{
+                         background-color: #1F2E3C; 
+
+                     }
+                 }
+                 
+             }
+             
+           }
+           
+    }
+
+}
+
+.contenedorHorario{
+    background-color:var(--colorContenedor);
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    padding:40px ;
+    font-size: 20px;
+    color: var(--letras);
+    
+}
